@@ -10,6 +10,14 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
 
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [notas_musicais]
+
+
 markdown_extensions:
   - attr_list
 
