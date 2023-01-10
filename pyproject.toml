@@ -40,3 +40,6 @@ pre_test = "task lint"
 test = "task pytest"
 post_test = "task cov"
 cov = "coverage html"
+
+[tool.isort]
+profile = "black"
