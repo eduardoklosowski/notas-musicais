@@ -20,7 +20,7 @@ graus = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
         ('E', ['E', 'F#', 'G#', 'A', 'B', 'C#', 'D#']),
     ],
 )
-def test_escala_deve_retornar_notas_e_graus(tonica, notas):
+def test_escala_deve_retornar_notas_e_graus_da_escala_maior(tonica, notas):
     """
     Escalas baseadas em: descomplicandoamusica.com/wp-content/uploads/2014/08/escala-maior-12-notas.png
     """
@@ -35,6 +35,26 @@ def test_escala_deve_retornar_notas_e_graus(tonica, notas):
     resultado = escala(tonica, tonalidade)
 
     # Assert
+    assert esperado == resultado
+
+
+@pytest.mark.parametrize(
+    'tonica,notas',
+    [
+        ('C', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
+        ('D', ['D', 'E', 'F', 'G', 'A', 'A#', 'C']),
+        ('E', ['E', 'F#', 'G', 'A', 'B', 'C', 'D']),
+    ],
+)
+def test_escala_deve_retornar_notas_e_graus_da_escala_menor(tonica, notas):
+    tonalidade = 'menor'
+    esperado = {
+        'notas': notas,
+        'graus': graus,
+    }
+
+    resultado = escala(tonica, tonalidade)
+
     assert esperado == resultado
 
 
