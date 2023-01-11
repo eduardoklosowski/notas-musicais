@@ -29,6 +29,8 @@ mkdocstrings-python = "^0.8.3"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry.scripts]
+notas-musicais = "notas_musicais.cli:app"
 
 [tool.pytest.ini_options]
 pythonpath = "."
