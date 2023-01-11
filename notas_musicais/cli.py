@@ -19,7 +19,7 @@ def escalas(
         help='Tonalidade da escala. Por exemplo: maior, menor, ...',
     ),
 ):
-    table = Table()
+    table = Table(title=f'Escala {tonalidade} de {tonica}')
     notas, graus = escala(tonica, tonalidade).values()
 
     for grau in graus:
