@@ -31,3 +31,15 @@ def test_ecala_cli_deve_exibir_a_tonalidade_e_a_tonica(tonica, tonalidade):
     result = runner.invoke(app, [tonica, tonalidade])
 
     assert msg in result.stdout
+
+
+@mark.parametrize('acorde', ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'B°'])
+def test_escala_cli_deve_retornar_acordes_do_campo_harmonico(acorde):
+    result = runner.invoke(app, ['--harmonia'])
+    assert acorde in result.stdout
+
+
+@mark.parametrize('grau', ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'vii°'])
+def test_escala_cli_deve_retornar_graus_do_campo_harmonico(grau):
+    result = runner.invoke(app, ['--harmonia'])
+    assert grau in result.stdout
