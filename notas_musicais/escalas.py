@@ -39,7 +39,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
     except KeyError:
         raise KeyError(
             f'Essa escala não existe em nossa aplicação. '
-            f'Tente uma dessas {ESCALAS}'
+            f'Tente uma dessas {list(ESCALAS)}'
         )
 
     temp = []
