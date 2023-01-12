@@ -46,8 +46,48 @@ def test_escala_deve_retornar_notas_e_graus_da_escala_maior(tonica, notas):
         ('E', ['E', 'F#', 'G', 'A', 'B', 'C', 'D']),
     ],
 )
-def test_escala_deve_retornar_notas_e_graus_da_escala_menor(tonica, notas):
-    tonalidade = 'menor'
+def test_escala_deve_retornar_notas_e_graus_da_escala_menor_natural(tonica, notas):
+    tonalidade = 'menor-natural'
+    esperado = {
+        'notas': notas,
+        'graus': graus,
+    }
+
+    resultado = escala(tonica, tonalidade)
+
+    assert esperado == resultado
+
+
+@pytest.mark.parametrize(
+    'tonica,notas',
+    [
+        ('C', ['C', 'D', 'D#', 'F', 'G', 'G#', 'B']),
+        ('D', ['D', 'E', 'F', 'G', 'A', 'A#', 'C#']),
+        ('E', ['E', 'F#', 'G', 'A', 'B', 'C', 'D#']),
+    ],
+)
+def test_escala_deve_retornar_notas_e_graus_da_escala_menor_harmonica(tonica, notas):
+    tonalidade = 'menor-harmonica'
+    esperado = {
+        'notas': notas,
+        'graus': graus,
+    }
+
+    resultado = escala(tonica, tonalidade)
+
+    assert esperado == resultado
+
+
+@pytest.mark.parametrize(
+    'tonica,notas',
+    [
+        ('C', ['C', 'D', 'D#', 'F', 'G', 'A', 'B']),
+        ('D', ['D', 'E', 'F', 'G', 'A', 'B', 'C#']),
+        ('E', ['E', 'F#', 'G', 'A', 'B', 'C#', 'D#']),
+    ],
+)
+def test_escala_deve_retornar_notas_e_graus_da_escala_menor_melodica(tonica, notas):
+    tonalidade = 'menor-melodica'
     esperado = {
         'notas': notas,
         'graus': graus,

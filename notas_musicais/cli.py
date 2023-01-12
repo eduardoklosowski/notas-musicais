@@ -17,7 +17,7 @@ def escalas(
     ),
     tonalidade=Argument(
         'maior',
-        help='Tonalidade da escala. Por exemplo: maior, menor, ...',
+        help='Tonalidade da escala. Por exemplo: maior, menor-natural, ...',
     ),
     harmonia: bool = Option(False),
 ):

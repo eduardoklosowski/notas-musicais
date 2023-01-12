@@ -25,7 +25,7 @@ def test_escala_cli_deve_conter_os_graus_no_stdout(grau):
     assert grau in result.stdout
 
 
-@mark.parametrize('tonica,tonalidade', [('C', 'maior'), ('D#', 'menor')])
+@mark.parametrize('tonica,tonalidade', [('C', 'maior'), ('D#', 'menor-natural')])
 def test_ecala_cli_deve_exibir_a_tonalidade_e_a_tonica(tonica, tonalidade):
     msg = f'Escala {tonalidade} de {tonica}'
     result = runner.invoke(app, [tonica, tonalidade])
